@@ -1,0 +1,15 @@
+.container {
+  min-height: "100%";
+  width: "50%";
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.submitButton {
+  width: 7vw;
+  height: 5vh;
+  background-color: lightblue;
+  border-radius: 20px;
+  font-size: larger;
+  align-self: center;
+}

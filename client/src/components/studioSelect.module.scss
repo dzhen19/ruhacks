@@ -1,0 +1,26 @@
+.btn {
+    background-color: DodgerBlue; 
+    border: none; 
+    color: white; 
+    padding: 12px 16px; 
+    font-size: 16px; 
+    cursor: pointer; 
+  }
+  
+  .btn:hover {
+    background-color: RoyalBlue;
+  }
+
+  .btnContainer{
+      display: flex;
+      flex-direction: row;
+      margin-left: 4vw;
+      justify-content: space-around;
+  }
+
+  .container{
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+
+  }

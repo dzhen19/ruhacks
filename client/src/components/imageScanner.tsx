@@ -7,7 +7,7 @@ import { useDropzone } from "react-dropzone";
 
 interface Props {
   boxOptions: Array<boxTemplate>;
-  changeCount: (num: number, id: number) => void;
+  changeCount: (num: number, idList: Array<number>) => void;
   fileURL: string;
   setFileURL: (newURL: string) => void;
   objectList: Array<Object>;
@@ -57,12 +57,17 @@ const ImageScanner: React.FC<Props> = ({
                   path: pathLink,
                 },
               });
-              e.data.forEach((object) => {
+              let objectIDList = [];
+              e.data.forEach(async (object) => {
                 if (itemDict[object.name]) {
-                  changeCount(1, itemDict[object.name]);
+                  console.log("debug Here");
+                  console.log(object.name);
+                  console.log(itemDict[object.name]);
+                  objectIDList.push(itemDict[object.name]);
                 }
               });
-              setIsLoading(false);
+              await changeCount(1, objectIDList);
+              await setIsLoading(false);
             });
         }
       })
@@ -98,7 +103,6 @@ const ImageScanner: React.FC<Props> = ({
     );
   };
 
-  console.log(objectList);
   return (
     <div style={{ textAlign: "center" }}>
       <DropZone />

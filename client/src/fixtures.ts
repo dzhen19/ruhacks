@@ -75,7 +75,7 @@ export const allBoxes: boxTemplate[] = [
   {
     id: 13,
     brand: "furniture",
-    displayName: "Bevel Armchair",
+    displayName: "Couch",
     size: "",
     l: 30,
     w: 33,
@@ -88,7 +88,7 @@ export const allBoxes: boxTemplate[] = [
   {
     id: 14,
     brand: "furniture",
-    displayName: "Salt Chair",
+    displayName: "Chair",
     size: "",
     l: 18,
     w: 17,
@@ -251,8 +251,8 @@ export const itemDict = {
   box: 0,
   desk: 9,
   table: 9,
-  chair: 1 /*need to change*/,
-  couch: 2,
+  chair: 14 /*need to change*/,
+  couch: 13,
   bed: 10,
   mattress: 10,
   drawer: 11,

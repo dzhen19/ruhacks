@@ -4,17 +4,19 @@ import { boxTemplate } from "../fixtures";
 
 interface Props {
   boxType: boxTemplate;
-  setVal: (num: number, id: number) => void;
+  setVal: (num: number, id: Array<number>) => void;
 }
 
 export const InputBar: React.FC<Props> = ({ boxType, setVal }) => {
   function increment(e) {
-    setVal(1, boxType.id);
+    const idList = [boxType.id]
+    setVal(1, idList);
   }
 
   function decrement(e) {
     if (boxType.count > 0) {
-      setVal(-1, boxType.id);
+      const idList = [boxType.id]
+      setVal(-1, idList);
     }
   }
   return (

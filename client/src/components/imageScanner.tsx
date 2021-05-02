@@ -102,30 +102,38 @@ const ImageScanner: React.FC<Props> = ({
   return (
     <div style={{ textAlign: "center" }}>
       <DropZone />
-      <form className={styles.inputContainer} onSubmit={handleSubmission}>
-        <input id="fileInput" type="file" onChange={fileHandler} />
-        {/* <br /> */}
-        {/* <button disabled={isLoading && file !== null} value="submit">
+      {/* <form className={styles.inputContainer} onSubmit={handleSubmission}> */}
+      {/* <input id="fileInput" type="file" onChange={fileHandler} /> */}
+      {/* <br /> */}
+      {/* <button disabled={isLoading && file !== null} value="submit">
           {isLoading && file !== null ? "Loading ..." : "Submit"}
         </button> */}
-      </form>
+      {/* </form> */}
       {objectList !== null && (
         <div className={styles.resultContainer}>
           <div
             style={{
-              width: "100%",
+              width: "50%",
               height: "30vh",
               backgroundImage: `url(${fileURL})`,
-              backgroundSize: "cover",
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
             }}
           ></div>
-          {/* <img className={styles.resultImage} src={fileURL} /> */}
-          <div className={styles.itemContainer}>
-            <h2 style={{ textAlign: "center" }}>Items Identified</h2>
+          {/* list-style-position: outside; */}
+
+          <ul
+            style={{
+              listStylePosition: "outside",
+              textAlign: "left",
+              padding: "0 3%",
+            }}
+          >
+            <h5 style={{ textAlign: "center" }}>Items Identified</h5>
             {objectList.map((object) => (
               <StorageList item={object} />
             ))}
-          </div>
+          </ul>
         </div>
       )}
     </div>

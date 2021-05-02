@@ -14,18 +14,18 @@
   align-self: center;
 }
 
-.searchBar{
-  width: 80%;
+.searchBar {
+  // width: 80%;
+  width: 100%;
 }
 
-.searchContainer{
+.searchContainer {
   display: flex;
   flex-direction: row;
-  margin:5vh 5vw;
-
+  margin: 2vh 2vw;
 }
 
-.searchIcon{
-  height:4vh;
-  width:4vw;
+.searchIcon {
+  height: 4vh;
+  width: 4vw;
 }

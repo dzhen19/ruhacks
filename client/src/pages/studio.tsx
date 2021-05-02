@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import StudioSelect from "../components/studioSelect";
 import { allBoxes, testBin } from "../fixtures";
 import Preview from "../components/preview";
-import SubmitButton from "../components/submitButton";
-import ClearButton from "../components/clearButton";
+import MetaControls from "../components/metaControls";
 import axios from "axios";
 import "./studio.css";
 
@@ -45,14 +44,20 @@ export const Studio: React.FC<Props> = () => {
         style={{
           display: "flex",
           height: "100vh",
+          maxHeight: "100vh",
           flexDirection: "row",
         }}
       >
         <StudioSelect boxOptions={boxOptions} changeCount={changeCount} />
         <Preview APIResult={result} />
       </div>
-      <ClearButton handleClear={handleClear} />
-      <SubmitButton handleSubmit={handleSubmit} loading={loading} />
+      {/* <ClearButton handleClear={handleClear} />
+      <SubmitButton handleSubmit={handleSubmit} loading={loading} /> */}
+      <MetaControls
+        handleClear={handleClear}
+        handleSubmit={handleSubmit}
+        loading={loading}
+      />
     </>
   );
 };

@@ -28,7 +28,7 @@ export const allBoxes: boxTemplate[] = [
     l: 42,
     w: 24,
     h: 24,
-    count: 3,
+    count: 0,
     imgUrl:
       "https://global-uploads.webflow.com/5b44edefca321a1e2d0c2aa6/60645045e49a2a813b207633_Dimensions-Furniture-Desks-Marisa-Desk-Icon.svg",
     assetUrl: "assets/working_table.obj",
@@ -41,7 +41,7 @@ export const allBoxes: boxTemplate[] = [
     l: 38,
     w: 75,
     h: 4,
-    count: 2,
+    count: 0,
     imgUrl:
       "https://global-uploads.webflow.com/5b44edefca321a1e2d0c2aa6/5c317efb32c18750af04a544_Dimensions-Guide-Furniture-Beds-Twin-Single-Beds-Dimensions.svg",
     assetUrl: "assets/mattress.obj",
@@ -54,7 +54,7 @@ export const allBoxes: boxTemplate[] = [
     l: 17,
     w: 35,
     h: 52,
-    count: 3,
+    count: 0,
     imgUrl:
       "https://global-uploads.webflow.com/5b44edefca321a1e2d0c2aa6/5cc3e8a37c5efa28e5d1d64f_Dimensions-Guide-Furniture-Dressers-Chests-IKEA-Hemnes-3-Drawer-Chest-Icon.svg",
     assetUrl: "assets/drawer.obj",

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import StudioSelect from "../components/studioSelect";
-import { boxTemplate, allBoxes, testResult } from "../fixtures";
+import { allBoxes, testBin } from "../fixtures";
 import Preview from "../components/preview";
 import SubmitButton from "../components/submitButton";
 import ClearButton from "../components/clearButton";
@@ -11,7 +11,7 @@ interface Props {}
 
 export const Studio: React.FC<Props> = () => {
   const [boxOptions, setBoxOptions] = useState(allBoxes);
-  const [result, setResult] = useState(testResult);
+  const [result, setResult] = useState({ result: allBoxes, binInfo: testBin });
   const [loading, setLoading] = useState(false);
 
   const changeCount = (num: number, id: number) => {

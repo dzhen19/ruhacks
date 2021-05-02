@@ -165,7 +165,6 @@ export default function Scene({ APIResult }) {
 
   return (
     <scene>
-      <axesHelper scale={5000} />
       <ambientLight intensity={0.5} />
       <orbitControls
         // @ts-ignore

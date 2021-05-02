@@ -13,13 +13,20 @@ export const Studio: React.FC<Props> = () => {
   const [result, setResult] = useState({ result: allBoxes, binInfo: testBin });
   const [loading, setLoading] = useState(false);
 
-  const changeCount = (num: number, id: number) => {
+  const changeCount = async (num: number, idList: Array<number>) => {
     const newBoxOptions = JSON.parse(JSON.stringify(boxOptions));
-    newBoxOptions.find((boxOption) => {
-      if (boxOption.id === id) boxOption.count += num;
-    });
+    idList.forEach((id)=>{
+      newBoxOptions.find((boxOption) => {
+        if (boxOption.id === id) {
+          boxOption.count += num;
+          console.log(boxOption.displayName);
+          console.log(boxOptions);
+        }
+      });
+    })
 
-    setBoxOptions(newBoxOptions);
+
+    await setBoxOptions(newBoxOptions);
   };
 
   const handleSubmit = () => {

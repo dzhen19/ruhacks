@@ -1,7 +1,7 @@
 const allBins = [
   {
     name: "Large Closet",
-    dim: "5x10",
+    dim: "5x5",
     w: 60,
     l: 60,
     h: 96,

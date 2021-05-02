@@ -3,6 +3,7 @@ import StudioSelect from "../components/studioSelect";
 import { boxTemplate, allBoxes, testResult } from "../fixtures";
 import Preview from "../components/preview";
 import SubmitButton from "../components/submitButton";
+import ClearButton from "../components/clearButton";
 import axios from "axios";
 import "./studio.css";
 
@@ -14,14 +15,12 @@ export const Studio: React.FC<Props> = () => {
   const [loading, setLoading] = useState(false);
 
   const changeCount = (num: number, id: number) => {
-    let newBox = boxOptions[id];
-    newBox.count = boxOptions[id].count + num;
+    const newBoxOptions = JSON.parse(JSON.stringify(boxOptions));
+    newBoxOptions.find((boxOption) => {
+      if (boxOption.id === id) boxOption.count += num;
+    });
 
-    setBoxOptions(
-      boxOptions.map((boxType) =>
-        boxType.id === id ? { ...boxType, newBox } : boxType
-      )
-    );
+    setBoxOptions(newBoxOptions);
   };
 
   const handleSubmit = () => {
@@ -29,10 +28,15 @@ export const Studio: React.FC<Props> = () => {
     axios
       .post("/api/packit4meWrapper", boxOptions)
       .then((res) => {
+        console.log(res.data);
         setResult(res.data);
         setLoading(false);
       })
       .catch((err) => console.error(err));
+  };
+
+  const handleClear = () => {
+    setBoxOptions(allBoxes);
   };
 
   return (
@@ -47,6 +51,7 @@ export const Studio: React.FC<Props> = () => {
         <StudioSelect boxOptions={boxOptions} changeCount={changeCount} />
         <Preview APIResult={result} />
       </div>
+      <ClearButton handleClear={handleClear} />
       <SubmitButton handleSubmit={handleSubmit} loading={loading} />
     </>
   );

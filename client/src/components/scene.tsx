@@ -24,8 +24,7 @@ declare global {
 }
 
 const getRandomColorString = () => {
-  var randomColor = Math.floor(Math.random() * 16777215).toString(16);
-  return `#${randomColor}`;
+  return "#" + ((Math.random() * 0xffffff) << 0).toString(16);
 };
 
 const Box = (props: any) => {
@@ -57,15 +56,22 @@ const Model = ({ position, assetPath, size }) => {
   const obj = useLoader(OBJLoader, assetPath);
   //@ts-ignore
   const obj_copy = useMemo(() => {
+    const color = getRandomColorString();
     const BasicMaterial = new THREE.MeshBasicMaterial({
       color: new THREE.Color(getRandomColorString()),
     });
     //@ts-ignore
     const b = obj.clone();
-    // add a color to the cloned obj
+
+    // center loaded model
+    var box = new THREE.Box3().setFromObject(b);
+    var center = new THREE.Vector3();
+    box.getCenter(center);
+    b.position.sub(center);
+
+    // attach color material
     b.children.forEach((mesh, i) => {
       mesh.material = BasicMaterial;
-      mesh.geometry.center();
     });
     return b;
   }, [obj]);
@@ -120,7 +126,6 @@ export default function Scene({ APIResult }) {
         const s2 = item.y_origin_in_bin;
         const s3 = item.z_origin_in_bin;
         const position: any = Object.values(APIResulttoXYZ(s1, s2, s3));
-        console.log(position);
 
         const size = Object.values(
           APIResulttoXYZ(item.sp_size_1, item.sp_size_2, item.sp_size_3)
@@ -158,7 +163,6 @@ export default function Scene({ APIResult }) {
     }
   }, [result, binRef]);
 
-  console.log(APIResult);
   return (
     <scene>
       <axesHelper scale={5000} />
@@ -182,7 +186,7 @@ export default function Scene({ APIResult }) {
             APIResulttoXYZ(result.size_1, result.size_2, result.size_3)
           )}
         />
-        <meshStandardMaterial color={"orange"} wireframe />
+        <meshStandardMaterial color={"#1B7FFF"} wireframe />
       </mesh>
       {items}
     </scene>

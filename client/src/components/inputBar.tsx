@@ -22,32 +22,31 @@ export const InputBar: React.FC<Props> = ({ boxType, setVal }) => {
       <img className={styles.boxImage} src={boxType.imgUrl} alt={"Box Image"} />
       <br />
       <div className={styles.boxInfo}>
-        <h5>
-          {boxType.displayName + " " + boxType.size.toUpperCase() + " Box"}
+        <h5 style={{ marginBottom: "10px" }}>
+          {boxType.displayName + " " + boxType.size.toUpperCase()}
         </h5>
-        <h5>
-          {"L" + boxType.l + " x " + "W" + boxType.w + " x " + "H" + boxType.h}
-        </h5>
+        <h6>
+          {"L " +
+            boxType.l +
+            "'' x " +
+            "W " +
+            boxType.w +
+            "'' x " +
+            "H " +
+            boxType.h +
+            "''"}
+        </h6>
       </div>
       <div className={styles.boxNum}>
-        <button
-          className={styles.choiceButton}
-          style={{ backgroundColor: "lime" }}
-          onClick={increment}
-        >
-          <h2>+</h2>
+        <button onClick={increment}>
+          <b>+</b>
         </button>
-
-        <h2>{boxType.count}</h2>
-        <button
-          className={styles.choiceButton}
-          style={{ backgroundColor: "lightcoral" }}
-          onClick={decrement}
-        >
-          <h2>-</h2>
+        {boxType.count}
+        <button onClick={decrement}>
+          <b>-</b>
         </button>
       </div>
-    </ul>   
+    </ul>
   );
 };
 

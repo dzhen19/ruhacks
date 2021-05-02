@@ -26,7 +26,7 @@ function Box(props: any) {
   return (
     <mesh {...props} ref={mesh} scale={1}>
       <boxGeometry args={props.size} />
-      <meshStandardMaterial color={"orange"} wireframe />
+      <meshStandardMaterial color={"#1B7FFF"} wireframe />
     </mesh>
   );
 }
@@ -34,7 +34,11 @@ function Box(props: any) {
 export default function Preview({ APIResult }) {
   return (
     <div
-      style={{ width: "50%", height: "100vh", borderLeft: "solid black 2px" }}
+      style={{
+        width: "50%",
+        height: "100vh",
+        borderLeft: "solid rgba(0,0,0,0.1) 2px",
+      }}
     >
       <Canvas
         onCreated={(state) => {

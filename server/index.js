@@ -33,10 +33,6 @@ function checkFileType(file, cb) {
   }
 }
 
-function regExpEscape(literal_string) {
-  return literal_string.replace(/[-[\]{}()*+!<=:?.\/\\^$|#\s,]/g, '\\$&');
-}
-
 const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../client/build")));

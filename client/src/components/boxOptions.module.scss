@@ -13,3 +13,19 @@
   font-size: larger;
   align-self: center;
 }
+
+.searchBar{
+  width: 80%;
+}
+
+.searchContainer{
+  display: flex;
+  flex-direction: row;
+  margin:5vh 5vw;
+
+}
+
+.searchIcon{
+  height:4vh;
+  width:4vw;
+}

@@ -140,7 +140,7 @@ export const allBoxes: boxTemplate[] = [
   {
     id: 0,
     brand: "homeDepot",
-    displayName: "Home Depot",
+    displayName: "Home Depot Box",
     size: "s",
     l: 15,
     w: 12,
@@ -152,7 +152,7 @@ export const allBoxes: boxTemplate[] = [
   {
     id: 1,
     brand: "homeDepot",
-    displayName: "Home Depot",
+    displayName: "Home Depot Box",
     size: "m",
     l: 22,
     w: 16,
@@ -164,7 +164,7 @@ export const allBoxes: boxTemplate[] = [
   {
     id: 2,
     brand: "homeDepot",
-    displayName: "Home Depot",
+    displayName: "Home Depot Box",
     size: "l",
     l: 28,
     w: 15,
@@ -176,7 +176,7 @@ export const allBoxes: boxTemplate[] = [
   {
     id: 3,
     brand: "homeDepot",
-    displayName: "Home Depot",
+    displayName: "Home Depot Box",
     size: "xl",
     l: 22,
     w: 22,
@@ -188,7 +188,7 @@ export const allBoxes: boxTemplate[] = [
   {
     id: 4,
     brand: "homeDepot",
-    displayName: "Home Depot",
+    displayName: "Home Depot Box",
     size: "t",
     l: 24,
     w: 24,
@@ -200,7 +200,7 @@ export const allBoxes: boxTemplate[] = [
   {
     id: 5,
     brand: "uHaul",
-    displayName: "U-Haul",
+    displayName: "U-Haul Box",
     size: "m",
     l: 18,
     w: 18,
@@ -212,7 +212,7 @@ export const allBoxes: boxTemplate[] = [
   {
     id: 6,
     brand: "uHaul",
-    displayName: "U-Haul",
+    displayName: "U-Haul Box",
     size: "s",
     l: 12,
     w: 16,
@@ -224,7 +224,7 @@ export const allBoxes: boxTemplate[] = [
   {
     id: 7,
     brand: "uHaul",
-    displayName: "U-Haul",
+    displayName: "U-Haul Box",
     size: "l",
     l: 18,
     w: 18,
@@ -236,7 +236,7 @@ export const allBoxes: boxTemplate[] = [
   {
     id: 8,
     brand: "uHaul",
-    displayName: "U-Haul",
+    displayName: "U-Haul Box",
     size: "xl",
     l: 18,
     w: 24,
